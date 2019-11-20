@@ -9,17 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BussinessRegistratonActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".adapters.installWork"></activity>
+        <activity android:name=".BussinessRegistratonActivity" />
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SaveInstallationDetails" />
+        <activity
+            android:name=".TransportDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".PaintingsDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".WellnessAndCareDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".CleanersDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".InstallationDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".DashBoardSections">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity">
-
-        </activity>
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

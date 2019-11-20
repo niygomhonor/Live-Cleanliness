@@ -27,6 +27,8 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
         wellness=(CardView) findViewById(R.id.cardView3);
         paintings=(CardView) findViewById(R.id.cardView4);
         transport=(CardView) findViewById(R.id.cardView5);
+
+
         installation.setOnClickListener(this);
         cleaners.setOnClickListener(this);
         wellness.setOnClickListener(this);

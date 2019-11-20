@@ -64,7 +64,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (v == mLogin){
             logIn();
         }
-
     }
 
     private void createAuthProgressDialog(){
@@ -92,9 +91,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 mAuthProgressDialog.dismiss();
                 Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this,DashBoardSections.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
                 if (!task.isSuccessful()) {
                     Log.w(TAG, "signInWithEmail", task.getException());
                     Toast.makeText(LoginActivity.this, "Welcome ", Toast.LENGTH_LONG).show();
@@ -102,6 +101,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
-
-
 }

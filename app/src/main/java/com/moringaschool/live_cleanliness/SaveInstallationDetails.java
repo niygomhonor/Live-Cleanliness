@@ -37,11 +37,11 @@ public class SaveInstallationDetails extends AppCompatActivity {
         setContentView(R.layout.activity_installation_details);
         auth = FirebaseAuth.getInstance();
         installation = FirebaseDatabase.getInstance().getReference("Installations");
-        location = findViewById(R.id.a);
-        description = findViewById(R.id.b);
-        timeToBeDone = findViewById(R.id.c);
-        whatItIs = findViewById(R.id.d);
-        saveData = findViewById(R.id.button);
+//        location = findViewById(R.id.a);
+//        description = findViewById(R.id.b);
+//        timeToBeDone = findViewById(R.id.c);
+//        whatItIs = findViewById(R.id.d);
+//        saveData = findViewById(R.id.button);
         saveData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
