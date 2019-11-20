@@ -3,17 +3,25 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_message"
-            android:icon="@drawable/ic_add_location_24dp"
-            android:title="View location" />
+            android:id="@+id/nav_Installation"
+
+            android:title="Installation and Repairs" />
         <item
-            android:id="@+id/nav_language"
-            android:icon="@drawable/ic_language_black_24dp"
-            android:title="View language" />
+            android:id="@+id/nav_clean"
+
+            android:title="Cleaning" />
         <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="Settings" />
+            android:id="@+id/nav_wellness"
+
+            android:title="Wellness and Care" />
+        <item
+            android:id="@+id/nav_painting"
+
+            android:title="Painting" />
+        <item
+            android:id="@+id/nav_transport"
+
+            android:title="Transport" />
     </group>
     <item android:title="Tell us" android:color="#FDF8FCFC">
         <menu>
