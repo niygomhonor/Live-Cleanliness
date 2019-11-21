@@ -12,15 +12,25 @@
     android:paddingTop="16dp"
     tools:context=".HomePage">
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"/>
+
+        android:orientation="vertical" >
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
        app:headerLayout="@layout/heading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/appColor"
+        android:id="@+id/nav_view"
         android:layout_gravity="start"
         app:itemIconTint="#ffff"
         app:itemTextColor="#ffff"

@@ -21,84 +21,82 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-    public static final String TAG =LoginActivity.class.getSimpleName();
-    private EditText mAdressEmail;
-    private EditText mPassw;
-    private Button mLogin;
-    private TextView mCreateAccount;
+    public static final String TAG = LoginActivity.class.getSimpleName();
+
+    private TextView registerEdit;
+    private EditText mPasswordEdit;
+    private EditText mEmailEdit;
+    private Button mPassword;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private ProgressDialog mAuthProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAdressEmail = (EditText) findViewById(R.id.adress);
-        mPassw = (EditText)findViewById(R.id.pass);
-        mLogin = (Button) findViewById(R.id.logIn);
-        mCreateAccount =(TextView) findViewById(R.id.create);
-        mAuth = FirebaseAuth.getInstance();
+        registerEdit = (TextView) findViewById(R.id.registerTextView);
+        mEmailEdit = (EditText) findViewById(R.id.email);
+        mPassword = (Button) findViewById(R.id.loginButton);
+        mPasswordEdit = (EditText) findViewById(R.id.password);
 
-        mLogin.setOnClickListener(this);
-        mCreateAccount.setOnClickListener(this);
-        mAuthListener = new FirebaseAuth.AuthStateListener(){
+        registerEdit.setOnClickListener(this);
+        mAuth = FirebaseAuth.getInstance();
+        mPassword.setOnClickListener(this);
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null){
+                if (user != null) {
+//                    Intent intent = new Intent(LogInActivity.this, newMainActivity.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                    startActivity(intent);
+//                    finish();
                 }
             }
         };
-        createAuthProgressDialog();
     }
 
     @Override
     public void onClick(View v) {
-        if (v == mCreateAccount) {
-            Intent create = new Intent(LoginActivity.this,SignUpActivity.class);
-            startActivity(create);
+        if (v == registerEdit) {
+            Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(intent);
+            finish();
         }
-        if (v == mLogin){
-            logIn();
+        if (v == mPassword) {
+            loginWithPassword();
         }
+
     }
 
-    private void createAuthProgressDialog(){
-        mAuthProgressDialog = new ProgressDialog(this);
-        mAuthProgressDialog.setTitle("Loading...");
-        mAuthProgressDialog.setMessage("Authenticating with Firebase...");
-        mAuthProgressDialog.setCancelable(false);
-    }
-
-    private void logIn() {
-        String email = mAdressEmail.getText().toString().trim();
-        String password = mPassw.getText().toString().trim();
-        if (email.equals("")){
-            mAdressEmail.setError("please enter your email");
+    private void loginWithPassword() {
+        String email = mEmailEdit.getText().toString().trim();
+        String password = mPasswordEdit.getText().toString().trim();
+        if (email.equals("")) {
+            mEmailEdit.setError("Please enter your email");
             return;
         }
-        if(password.equals("")){
-            mPassw.setError("Password cannot be blank");
+        if (password.equals("")) {
+            mPasswordEdit.setError("Password can not be blank ");
             return;
         }
-        mAuthProgressDialog.show();
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                mAuthProgressDialog.dismiss();
-                Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
-
-                Intent intent = new Intent(LoginActivity.this,DashBoardSections.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                if (!task.isSuccessful()) {
-                    Log.w(TAG, "signInWithEmail", task.getException());
-                    Toast.makeText(LoginActivity.this, "Welcome ", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Intent intent = new Intent(LoginActivity.this,HomePage.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "signInWithEmail", task.getException());
+                            Toast.makeText(LoginActivity.this, "You log in to Lancome paris.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

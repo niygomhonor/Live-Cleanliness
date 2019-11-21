@@ -2,11 +2,17 @@ package com.moringaschool.live_cleanliness;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+
+import com.moringaschool.live_cleanliness.fragments.CleaningFragment;
 
 public class DashBoardSections extends AppCompatActivity implements ViewPager.OnClickListener {
     CardView installation;
@@ -14,6 +20,7 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
     CardView wellness;
     CardView paintings;
     CardView transport;
+    LinearLayout frameLayout;
 
 
 
@@ -26,14 +33,14 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
         cleaners=(CardView) findViewById(R.id.cardView2);
         wellness=(CardView) findViewById(R.id.cardView3);
         paintings=(CardView) findViewById(R.id.cardView4);
-        transport=(CardView) findViewById(R.id.cardView5);
-
+//        transport=(CardView) findViewById(R.id.cardView5);
+frameLayout=findViewById(R.id.fragment_contain);
 
         installation.setOnClickListener(this);
         cleaners.setOnClickListener(this);
         wellness.setOnClickListener(this);
         paintings.setOnClickListener(this);
-        transport.setOnClickListener(this);
+//        transport.setOnClickListener(this);
 
     }
     @Override
@@ -45,8 +52,8 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
             startActivity(clean);
         }
         if (v==cleaners){
-            Intent clean= new Intent(DashBoardSections.this,CleanersDetails.class);
-startActivity(clean);
+            Intent intent = new Intent(DashBoardSections.this,CleanersDetails.class);
+            startActivity(intent);
         }
 
         if (v==wellness){
@@ -58,11 +65,11 @@ startActivity(clean);
             Intent clean=new Intent(DashBoardSections.this,PaintingsDetails.class);
             startActivity(clean);
         }
-        if (v==transport){
-
-            Intent clean=new Intent(DashBoardSections.this,TransportDetails.class);
-            startActivity(clean);
-        }
+//        if (v==transport){
+//
+//            Intent clean=new Intent(DashBoardSections.this,HomePage.class);
+//            startActivity(clean);
+//        }
     }
 
 }

@@ -10,6 +10,9 @@ import com.moringaschool.live_cleanliness.adapters.ViewPagerAdapter;
 import com.moringaschool.live_cleanliness.tabs.FragmentInstallProduct;
 import com.moringaschool.live_cleanliness.tabs.FragmentInstallWorks;
 import com.moringaschool.live_cleanliness.tabs.FragmentInstallReview;
+import com.moringaschool.live_cleanliness.tabs.FragmentPaintDetail;
+import com.moringaschool.live_cleanliness.tabs.FragmentPaintPro;
+import com.moringaschool.live_cleanliness.tabs.FragmentPaintReview;
 
 public class PaintingsDetails extends AppCompatActivity {
     private TabLayout tabLayout;
@@ -27,9 +30,9 @@ public class PaintingsDetails extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
 
-        adapter.AddFragment(new FragmentInstallProduct(),"Product");
-        adapter.AddFragment(new FragmentInstallWorks(),"How it works");
-        adapter.AddFragment(new FragmentInstallReview(),"Reviews");
+        adapter.AddFragment(new FragmentPaintPro(),"Product");
+        adapter.AddFragment(new FragmentPaintDetail(),"How it works");
+        adapter.AddFragment(new FragmentPaintReview(),"Reviews");
 
 
         viewPager.setAdapter(adapter);

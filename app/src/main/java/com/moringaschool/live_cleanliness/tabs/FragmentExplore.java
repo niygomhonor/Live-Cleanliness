@@ -19,7 +19,7 @@ public class FragmentExplore extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.explore_fragment,container,false);
+        view = inflater.inflate(R.layout.cleanerproduct_fragment,container,false);
         return view;
     }
 }

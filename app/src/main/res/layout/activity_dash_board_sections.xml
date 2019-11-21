@@ -13,26 +13,33 @@
         android:layout_height="match_parent"
         android:weightSum="10"
         android:orientation="vertical"
-        >
+        android:id="@+id/fragment_contain">
     
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2">
 
-        <TextView
-            android:id="@+id/dash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:id="@+id/number"
-            android:layout_below="@id/dash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6 Options"
-            android:textColor="@color/colorPrimary"/>
+<!--        <TextView-->
+<!--            android:id="@+id/dash"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="Dashboard"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="@color/colorPrimary"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/number"-->
+<!--            android:layout_below="@id/dash"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:text="6 Options"-->
+<!--            android:textColor="@color/colorPrimary"/>-->
     </RelativeLayout>
     <GridLayout
         android:columnCount="2"
@@ -74,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="INSTALLATION AND REPAIRS"
-                    android:textColor="#BE804B"
+                    android:textColor="#7A2309"
                     android:textAlignment="center"/>
 
             </LinearLayout>
@@ -172,70 +179,70 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="42dp"
-                    android:text="PAINTINGS"
+                    android:text="ACCOUNTANCY AND CONSULTANCY"
                     android:textColor="#7A2309" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView5"
-            android:layout_width="150dp"
-            app:cardCornerRadius="35dp"
-            android:layout_height="190dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_margin="10dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="94dp"
-                    android:layout_height="74dp"
-                    android:background="@drawable/transport" />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="10dp"
-                    android:background="#C5BABA" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="42dp"
-                    android:text="TRANSPORT"
-                    android:textColor="#7A2309" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/cardView5"-->
+<!--            android:layout_width="150dp"-->
+<!--            app:cardCornerRadius="35dp"-->
+<!--            android:layout_height="190dp"-->
+<!--            android:clickable="true"-->
+<!--            android:foreground="?android:attr/selectableItemBackground"-->
+<!--            android:layout_margin="10dp">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:gravity="center">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="94dp"-->
+<!--                    android:layout_height="74dp"-->
+<!--                    android:background="@drawable/transport" />-->
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:background="#C5BABA" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="42dp"-->
+<!--                    android:text="TRANSPORT"-->
+<!--                    android:textColor="#7A2309" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView6"
-            android:layout_width="150dp"
-            app:cardCornerRadius="35dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_height="190dp"
-            android:layout_margin="10dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="94dp"
-                    android:layout_height="74dp"
-                    android:background="@drawable/ic_dashboard_black_24dp" />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="10dp"
-                    android:background="#C5BABA" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="42dp"
-                    android:text="mmmmmmm"
-                    android:textColor="#7A2309" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/cardView6"-->
+<!--            android:layout_width="150dp"-->
+<!--            app:cardCornerRadius="35dp"-->
+<!--            android:clickable="true"-->
+<!--            android:foreground="?android:attr/selectableItemBackground"-->
+<!--            android:layout_height="190dp"-->
+<!--            android:layout_margin="10dp">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:gravity="center">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="94dp"-->
+<!--                    android:layout_height="74dp"-->
+<!--                    android:background="@drawable/ic_dashboard_black_24dp" />-->
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:background="#C5BABA" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="42dp"-->
+<!--                    android:text="mmmmmmm"-->
+<!--                    android:textColor="#7A2309" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
 
     </GridLayout>
     </LinearLayout>

@@ -7,9 +7,10 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.moringaschool.live_cleanliness.adapters.ViewPagerAdapter;
+import com.moringaschool.live_cleanliness.tabs.FragmentCleanWork;
 import com.moringaschool.live_cleanliness.tabs.FragmentCleaner;
 import com.moringaschool.live_cleanliness.tabs.FragmentExplore;
-import com.moringaschool.live_cleanliness.tabs.FragmentQuiz;
+import com.moringaschool.live_cleanliness.tabs.FragmentCleanWork;
 
 public class CleanersDetails extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class CleanersDetails extends AppCompatActivity {
 
 
         adapter.AddFragment(new FragmentCleaner(),"Product");
-        adapter.AddFragment(new FragmentQuiz(),"How it works");
+        adapter.AddFragment(new FragmentCleanWork(),"How it works");
         adapter.AddFragment(new FragmentExplore(),"Reviews");
 
 

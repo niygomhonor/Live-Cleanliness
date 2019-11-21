@@ -16,7 +16,7 @@ import com.moringaschool.live_cleanliness.R;
 
 import java.util.List;
 
-public class InstallAdapter extends BaseAdapter {
+public class HowworksAdapter extends BaseAdapter {
 
         Context context;
         String[] bssNames;
@@ -24,15 +24,13 @@ public class InstallAdapter extends BaseAdapter {
       int[] bssImage;
         View view;
 
-    public InstallAdapter(Context context, String[] bssNames,String[] bssName2, int[] bssImage) {
+    public HowworksAdapter(Context context, String[] bssNames, String[] bssName2, int[] bssImage) {
         this.context = context;
         this.bssNames = bssNames;
         this.bssImage = bssImage;
         this.bssName = bssName2;
     }
 
-    public InstallAdapter() {
-    }
     @Override
     public int getCount() {
         return bssNames.length;

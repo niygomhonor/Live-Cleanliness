@@ -10,6 +10,7 @@ import com.moringaschool.live_cleanliness.adapters.ViewPagerAdapter;
 import com.moringaschool.live_cleanliness.tabs.FragmentPaintDetail;
 import com.moringaschool.live_cleanliness.tabs.FragmentPaintPro;
 import com.moringaschool.live_cleanliness.tabs.FragmentPaintReview;
+import com.moringaschool.live_cleanliness.tabs.FragmentWellness;
 
 public class WellnessAndCareDetails extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class WellnessAndCareDetails extends AppCompatActivity {
 
 
         adapter.AddFragment(new FragmentPaintPro(),"Product");
-        adapter.AddFragment(new FragmentPaintDetail(),"How it work");
+        adapter.AddFragment(new FragmentWellness(),"How it work");
         adapter.AddFragment(new FragmentPaintReview(),"Reviews");
 
 
