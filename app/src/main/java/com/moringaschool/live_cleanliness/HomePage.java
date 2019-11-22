@@ -1,7 +1,7 @@
 package com.moringaschool.live_cleanliness;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.FragmentManager;
+
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
+
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -31,16 +33,23 @@ import com.moringaschool.live_cleanliness.fragments.InstallationFragment;
 import com.moringaschool.live_cleanliness.fragments.PaintingFragment;
 import com.moringaschool.live_cleanliness.fragments.TransportFragment;
 import com.moringaschool.live_cleanliness.fragments.WellnessFragment;
-import com.squareup.picasso.Picasso;
 
 
-public class HomePage extends AppCompatActivity  implements  NavigationView.OnNavigationItemSelectedListener{
+
+public class
+HomePage extends AppCompatActivity  implements  NavigationView.OnNavigationItemSelectedListener{
 private DrawerLayout drawer;
 private ActionBarDrawerToggle toggle;
+    private ImageView image, leaf;
+    private LinearLayout animText, texth, menus;
+    private Animation frombottom;
+    private Button button;
+
 NavigationView navigationView;
     public Uri imgUri;
     private static final int REQUEST_IMAGE_CAPTURE = 111;
     ImageView images;
+
 
 
     @Override
@@ -52,13 +61,59 @@ NavigationView navigationView;
         toggle=new ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close);
 
         navigationView=findViewById(R.id.nav_view);
+
         images=findViewById(R.id.imageView);
+
 
         navigationView.setNavigationItemSelectedListener(this);
 
 drawer.addDrawerListener(toggle);
 toggle.syncState();
 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        button=(Button)findViewById(R.id.button);
+
+
+
+        image = (ImageView) findViewById(R.id.image);
+        leaf = (ImageView) findViewById(R.id.leaf);
+        animText = (LinearLayout) findViewById(R.id.animText);
+        texth = (LinearLayout) findViewById(R.id.explore);
+//        menus = (LinearLayout) findViewById(R.id.menus);
+        frombottom = AnimationUtils.loadAnimation(this, R.anim.anim);
+
+
+        image.animate().translationY(-1900).setDuration(2000).setStartDelay(600);
+        leaf.animate().alpha(0).setDuration(2000).setStartDelay(900);
+        animText.animate().translationY(140).alpha(0).setDuration(1000).setStartDelay(600);
+
+        texth.startAnimation(frombottom);
+//        menus.startAnimation(frombottom);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(HomePage.this, DashBoardSections.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+//if (savedInstanceState==null) {
+//    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InstallationFragment()).commit();
+//    navigationView.setCheckedItem(R.id.nav_Installation);
+//}
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if( toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
 
 if (savedInstanceState==null) {
@@ -104,6 +159,7 @@ images.setOnClickListener(new View.OnClickListener() {
             Picasso.get().load(imgUri).into(images);
         }
     }
+
 
 
 
@@ -157,8 +213,8 @@ images.setOnClickListener(new View.OnClickListener() {
         return true;
 
 
-
     }
+
 
 
 

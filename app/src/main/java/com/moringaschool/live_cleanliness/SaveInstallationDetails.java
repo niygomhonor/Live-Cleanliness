@@ -3,6 +3,9 @@ package com.moringaschool.live_cleanliness;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import android.text.TextUtils;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,6 +36,7 @@ public class SaveInstallationDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_installation_details_one);
         auth = FirebaseAuth.getInstance();
         installation = FirebaseDatabase.getInstance().getReference("Installations");
@@ -41,6 +45,7 @@ public class SaveInstallationDetails extends AppCompatActivity {
         timeToBeDone = findViewById(R.id.c);
         whatItIs = findViewById(R.id.d);
         saveData = findViewById(R.id.button);
+
         saveData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,8 +61,13 @@ public class SaveInstallationDetails extends AppCompatActivity {
   descInst=description.getText().toString();
   whatItIsInst=whatItIs.getText().toString();
   String id=installation.push().getKey();
+
+        InstallationCustomer installationCustomer=new InstallationCustomer(locationInst,descInst,whatItIsInst,timeTobeDoneInst,id);
+        installation.child(id).setValue(installationCustomer);
+
 //        InstallationCustomer installationCustomer=new InstallationCustomer(locationInst,descInst,whatItIsInst,timeTobeDoneInst,id);
 //        installation.child(id).setValue(installationCustomer);
+
         Toast.makeText(this, "Successfully Sent", Toast.LENGTH_SHORT).show();
     }
 

@@ -2,11 +2,17 @@ package com.moringaschool.live_cleanliness;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+
 
 public class DashBoardSections extends AppCompatActivity implements ViewPager.OnClickListener {
     CardView installation;
@@ -14,6 +20,9 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
     CardView wellness;
     CardView paintings;
     CardView transport;
+
+    LinearLayout frameLayout;
+
 
 
 
@@ -26,6 +35,10 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
         cleaners=(CardView) findViewById(R.id.cardView2);
         wellness=(CardView) findViewById(R.id.cardView3);
         paintings=(CardView) findViewById(R.id.cardView4);
+
+
+frameLayout=findViewById(R.id.fragment_contain);
+
 
         installation.setOnClickListener(this);
         cleaners.setOnClickListener(this);
@@ -49,6 +62,7 @@ startActivity(clean);
 
         if (v==wellness){
             Intent clean=new Intent(DashBoardSections.this, WellnessAndCareDetailsOne.class);
+
             startActivity(clean);
         }
         if (v==paintings){
@@ -56,6 +70,7 @@ startActivity(clean);
             Intent clean=new Intent(DashBoardSections.this,AccountancyDetails.class);
             startActivity(clean);
         }
+
 
     }
 

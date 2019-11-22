@@ -1,6 +1,10 @@
 package com.moringaschool.live_cleanliness.fragments;
 
 import android.app.FragmentManager;
+
+import android.content.Intent;
+
+
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -16,6 +20,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+
+
+import com.moringaschool.live_cleanliness.InstallationDetails;
 
 import com.moringaschool.live_cleanliness.Models.InstallationCustomer;
 import com.moringaschool.live_cleanliness.R;
@@ -50,7 +57,13 @@ businessGrid.setAdapter(adapter);
 businessGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+            Intent intent = new Intent(getContext(), InstallationDetails.class);
+            startActivity(intent);
+
         Toast.makeText(getActivity(), bssName[position], Toast.LENGTH_SHORT).show();
+
 
 
     }

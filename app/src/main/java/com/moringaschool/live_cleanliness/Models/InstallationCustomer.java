@@ -1,5 +1,22 @@
 package com.moringaschool.live_cleanliness.Models;
 
+
+import java.util.Date;
+
+public class InstallationCustomer {
+String Location;
+String description;
+String whatItIs;
+Date timeToBeDone;
+String id;
+
+    public InstallationCustomer(String location, String description, String whatItIs, Date timeToBeDone,String id) {
+        Location = location;
+        this.description = description;
+        this.whatItIs = whatItIs;
+        this.timeToBeDone = timeToBeDone;
+        this.id=id;
+
 import android.content.Intent;
 
 import java.util.Date;
@@ -19,11 +36,28 @@ String email;
         this.location = location;
         this.time = time;
         this.service = service;
+
     }
 
     public InstallationCustomer() {
     }
 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String location) {
+        Location = location;
+    }
     public String getName() {
         return name;
     }
@@ -70,5 +104,6 @@ String email;
 
     public void setService(String service) {
         this.service = service;
+
     }
 }

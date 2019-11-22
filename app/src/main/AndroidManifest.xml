@@ -9,6 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".InstallationActivity"></activity>
+        <activity android:name=".HomePage">
+
+        </activity>
+        <activity android:name=".adapters.installWork"></activity>
+        <activity android:name=".BussinessRegistratonActivity" />
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+        </activity>
+        <activity android:name=".SignUpActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
         <activity android:name=".RegisterBusiness"></activity>
         <activity android:name=".CleaningDetailsOne" />
         <activity android:name=".AccountancyDetails" />
@@ -19,14 +33,33 @@
         <activity android:name=".WellnessAndCareDetailsOne" />
         <activity android:name=".CleanersDetailsOne" />
         <activity android:name=".InstallationDetailsOne" />
-        <activity android:name=".DashBoardSections">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".SaveInstallationDetails" />
+       
+        <activity
+            android:name=".PaintingsDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".WellnessAndCareDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".CleanersDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".InstallationDetails"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".DashBoardSections">
+
+        </activity>
+       
     </application>
 
 </manifest>
