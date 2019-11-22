@@ -26,12 +26,12 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
         cleaners=(CardView) findViewById(R.id.cardView2);
         wellness=(CardView) findViewById(R.id.cardView3);
         paintings=(CardView) findViewById(R.id.cardView4);
-        transport=(CardView) findViewById(R.id.cardView5);
+
         installation.setOnClickListener(this);
         cleaners.setOnClickListener(this);
         wellness.setOnClickListener(this);
         paintings.setOnClickListener(this);
-        transport.setOnClickListener(this);
+
 
     }
     @Override
@@ -39,28 +39,24 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
 
         if (v==installation){
 
-            Intent clean=new Intent(DashBoardSections.this,InstallationDetails.class);
+            Intent clean=new Intent(DashBoardSections.this, InstallationDetailsOne.class);
             startActivity(clean);
         }
         if (v==cleaners){
-            Intent clean= new Intent(DashBoardSections.this,CleanersDetails.class);
+            Intent clean= new Intent(DashBoardSections.this, CleaningDetailsOne.class);
 startActivity(clean);
         }
 
         if (v==wellness){
-            Intent clean=new Intent(DashBoardSections.this,WellnessAndCareDetails.class);
+            Intent clean=new Intent(DashBoardSections.this, WellnessAndCareDetailsOne.class);
             startActivity(clean);
         }
         if (v==paintings){
 
-            Intent clean=new Intent(DashBoardSections.this,PaintingsDetails.class);
+            Intent clean=new Intent(DashBoardSections.this,AccountancyDetails.class);
             startActivity(clean);
         }
-        if (v==transport){
 
-            Intent clean=new Intent(DashBoardSections.this,TransportDetails.class);
-            startActivity(clean);
-        }
     }
 
 }

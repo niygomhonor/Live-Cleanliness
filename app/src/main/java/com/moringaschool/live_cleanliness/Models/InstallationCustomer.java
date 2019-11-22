@@ -1,62 +1,74 @@
 package com.moringaschool.live_cleanliness.Models;
 
+import android.content.Intent;
+
 import java.util.Date;
 
 public class InstallationCustomer {
-String Location;
-String description;
-String whatItIs;
-Date timeToBeDone;
-String id;
+    String name;
+    int phone;
+String email;
+    String location;
+    String time;
+    String service;
 
-    public InstallationCustomer(String location, String description, String whatItIs, Date timeToBeDone,String id) {
-        Location = location;
-        this.description = description;
-        this.whatItIs = whatItIs;
-        this.timeToBeDone = timeToBeDone;
-        this.id=id;
+    public InstallationCustomer(String name, int phone, String email, String location, String time, String service) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.location = location;
+        this.time = time;
+        this.service = service;
     }
 
     public InstallationCustomer() {
     }
 
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTime() {
+        return time;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public String getWhatItIs() {
-        return whatItIs;
+    public String getService() {
+        return service;
     }
 
-    public void setWhatItIs(String whatItIs) {
-        this.whatItIs = whatItIs;
-    }
-
-    public Date getTimeToBeDone() {
-        return timeToBeDone;
-    }
-
-    public void setTimeToBeDone(Date timeToBeDone) {
-        this.timeToBeDone = timeToBeDone;
+    public void setService(String service) {
+        this.service = service;
     }
 }
