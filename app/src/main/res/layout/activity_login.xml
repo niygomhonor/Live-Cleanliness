@@ -4,14 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/layout_backgroung"
     tools:context="LoginActivity">
-
-    <!--    <ImageView-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:id="@+id/imageView"-->
-    <!--        android:src="@drawable/parfunebg"-->
-    <!--        android:scaleType="centerCrop"-->
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -28,16 +22,17 @@
             android:layout_marginLeft="70dp"
             android:layout_marginBottom="20dp"
             android:text="LOG IN  "
-            android:textColor="@color/colorAccent"
+            android:textColor="#ffff"
             android:textSize="30dp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="344dp"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@android:color/white"
+            android:background="@drawable/corner"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:nextFocusDown="@+id/passwordEditText"
@@ -49,8 +44,9 @@
             android:id="@+id/password"
             android:layout_width="345dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:hint="Password"
+            android:background="@drawable/corner"
             android:inputType="textPassword"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
@@ -64,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50sp"
             android:layout_marginTop="15dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/corner"
             android:padding="10dp"
             android:shadowRadius="67"
             android:text="Log in" />
@@ -76,7 +72,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:text="Don't have an account? Sign up here!"
-            android:textSize="25sp"
+            android:textSize="15sp"
+            android:textColor="#ffff"
             android:textStyle="bold" />
 
     </LinearLayout>

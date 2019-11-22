@@ -3,10 +3,9 @@
     android:viewportHeight="500"
     android:viewportWidth="700"
     android:width="600dp">
-    <gradient
-        android:startColor="#007399"
-        android:endColor="#007399"/>
 
-
+    <gradient android:angle="0"
+        android:startColor="#285FBA"
+        android:endColor="#7535AD"/>
 
 </shape>

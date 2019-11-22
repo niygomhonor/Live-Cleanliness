@@ -13,6 +13,7 @@
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:text="CREATE ACCOUNT "
+        android:layout_marginTop="90dp"
         android:textColor="#ffff"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -23,6 +24,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="100dp"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_height="700dp"
         android:layout_marginBottom="20dp">
 
@@ -35,11 +37,10 @@
             android:background="@drawable/corner"
             android:hint="Name"
             android:drawableLeft="@drawable/ic_person_outline_black_24dp"
-             android:textColorHint="#b3b3b3"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
+        android:textColorHint="#b3b3b3"
             android:textSize="20sp" />
 
         <EditText
@@ -54,7 +55,7 @@
             android:padding="10dp"
             android:textColorHint="#b3b3b3"
             android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
+            android:textColor="#285FBA"
             android:textSize="20sp" />
 
         <EditText
@@ -69,7 +70,7 @@
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
+            android:textColor="#285FBA"
             android:textSize="20sp" />
 
         <EditText
@@ -84,7 +85,7 @@
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
+            android:textColor="#285FBA"
             android:textSize="20sp" />
 
         <Button
@@ -93,10 +94,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="95dp"
             android:background="@drawable/corner"
-            android:textColor="#b3b3b3"
+            android:textColor="#285FBA"
             android:padding="10dp"
-            android:text="Sign up"
-            android:layout_marginLeft="60dp" />
+            android:text="Sign up" />
 
         <TextView
             android:layout_width="wrap_content"

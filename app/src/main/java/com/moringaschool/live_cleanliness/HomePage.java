@@ -8,8 +8,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -25,6 +32,12 @@ HomePage extends AppCompatActivity  implements  NavigationView.OnNavigationItemS
 private DrawerLayout drawer;
 private ActionBarDrawerToggle toggle;
 NavigationView navigationView;
+
+    private ImageView image, leaf;
+    private LinearLayout animText, texth, menus;
+    private Animation frombottom;
+    private Button button;
+
 
 
     @Override
@@ -43,14 +56,39 @@ NavigationView navigationView;
 drawer.addDrawerListener(toggle);
 toggle.syncState();
 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        button=(Button)findViewById(R.id.button);
+
+
+
+        image = (ImageView) findViewById(R.id.image);
+        leaf = (ImageView) findViewById(R.id.leaf);
+        animText = (LinearLayout) findViewById(R.id.animText);
+        texth = (LinearLayout) findViewById(R.id.explore);
+//        menus = (LinearLayout) findViewById(R.id.menus);
+        frombottom = AnimationUtils.loadAnimation(this, R.anim.anim);
+
+
+        image.animate().translationY(-1900).setDuration(2000).setStartDelay(600);
+        leaf.animate().alpha(0).setDuration(2000).setStartDelay(900);
+        animText.animate().translationY(140).alpha(0).setDuration(1000).setStartDelay(600);
+
+        texth.startAnimation(frombottom);
+//        menus.startAnimation(frombottom);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(HomePage.this, DashBoardSections.class);
+                startActivity(intent);
+            }
+        });
+    }
 
 
 //if (savedInstanceState==null) {
 //    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InstallationFragment()).commit();
 //    navigationView.setCheckedItem(R.id.nav_Installation);
 //}
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

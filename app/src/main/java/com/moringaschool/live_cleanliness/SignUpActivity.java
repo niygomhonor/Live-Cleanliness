@@ -86,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         boolean validEmail = isValidEmail(email);
         boolean validName = validName(name);
         boolean validPassword = validPassword(password, comfirmPassword);
-//        boolean validName1= validName(mName);
+        boolean validName1= validName(mName);
         if (!validEmail || !validName || !validPassword) return;
 
         mAuthenticationProgressDialog.show();
@@ -98,13 +98,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         mAuthenticationProgressDialog.dismiss();
-
+                        Intent intent = new Intent(SignUpActivity.this,HomePage.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
                             createFirebaseUserProfile(task.getResult().getUser());
-                        } else {
-                            Toast.makeText(SignUpActivity.this, "Your account saved successfully",
-                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -118,10 +118,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(SignUpActivity.this, HomePage.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finish();
+//                    Intent intent = new Intent(SignUpActivity.this, HomePage.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                    startActivity(intent);
+//                    finish();
                 }
             }
 
