@@ -1,42 +1,59 @@
 {
   "project_info": {
+
     "project_number": "842477141327",
     "firebase_url": "https://live-cleanliness-b9ba5.firebaseio.com",
     "project_id": "live-cleanliness-b9ba5",
     "storage_bucket": "live-cleanliness-b9ba5.appspot.com"
+
+    "project_number": "619899753206",
+    "firebase_url": "https://live-cleanliness.firebaseio.com",
+    "project_id": "live-cleanliness",
+    "storage_bucket": "live-cleanliness.appspot.com"
+
   },
   "client": [
     {
       "client_info": {
+
         "mobilesdk_app_id": "1:842477141327:android:5193758b2d7e03e7a4993a",
+
+        "mobilesdk_app_id": "1:619899753206:android:ea591329b5a653f0d652d7",
+
         "android_client_info": {
           "package_name": "com.moringaschool.live_cleanliness"
         }
       },
       "oauth_client": [
         {
-          "client_id": "842477141327-chncs9ll4q11qlrst2cjs1ni07bcpd9d.apps.googleusercontent.com",
+
+          "client_id": "619899753206-vjcfso2cv8p81v6pgi97nu9cir3653qu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.moringaschool.live_cleanliness",
-            "certificate_hash": "d440bdb3f3ff69580b03a1ef0b40cd655fb6784b"
+            "certificate_hash": "ee24dc055fc364c0a283b8b3f5626e4fd6b5b45d"
           }
         },
         {
-          "client_id": "842477141327-djlh2itd2pr8pielgc51dd71gfj5l2mr.apps.googleusercontent.com",
+          "client_id": "619899753206-u09cass2scen3octhg0gkone36j34con.apps.googleusercontent.com",
+
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBYcMESCJUZHONBiK6EptsLeYBps_-bdM8"
+
+          "current_key": "AIzaSyCzE04xduV6BRINTNyC2TuFcjYyIt3dSDU"
+
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "842477141327-djlh2itd2pr8pielgc51dd71gfj5l2mr.apps.googleusercontent.com",
+
+              "client_id": "619899753206-u09cass2scen3octhg0gkone36j34con.apps.googleusercontent.com",
+
               "client_type": 3
             }
           ]

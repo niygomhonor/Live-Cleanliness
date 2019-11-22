@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".InstallationActivity"></activity>
         <activity android:name=".HomePage">
 
@@ -21,6 +22,18 @@
         </activity>
         <activity android:name=".SignUpActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+        <activity android:name=".RegisterBusiness"></activity>
+        <activity android:name=".CleaningDetailsOne" />
+        <activity android:name=".AccountancyDetails" />
+        <activity android:name=".InstallationActivity" />
+        <activity android:name=".HomePage" />
+        <activity android:name=".SaveInstallationDetails" />
+
+        <activity android:name=".WellnessAndCareDetailsOne" />
+        <activity android:name=".CleanersDetailsOne" />
+        <activity android:name=".InstallationDetailsOne" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,9 +43,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SaveInstallationDetails" />
-        <activity
-            android:name=".TransportDetails"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+       
         <activity
             android:name=".PaintingsDetails"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
@@ -48,6 +59,7 @@
         <activity android:name=".DashBoardSections">
 
         </activity>
+       
     </application>
 
 </manifest>

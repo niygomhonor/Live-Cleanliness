@@ -1,5 +1,6 @@
 package com.moringaschool.live_cleanliness.Models;
 
+
 import java.util.Date;
 
 public class InstallationCustomer {
@@ -15,10 +16,32 @@ String id;
         this.whatItIs = whatItIs;
         this.timeToBeDone = timeToBeDone;
         this.id=id;
+
+import android.content.Intent;
+
+import java.util.Date;
+
+public class InstallationCustomer {
+    String name;
+    int phone;
+String email;
+    String location;
+    String time;
+    String service;
+
+    public InstallationCustomer(String name, int phone, String email, String location, String time, String service) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.location = location;
+        this.time = time;
+        this.service = service;
+
     }
 
     public InstallationCustomer() {
     }
+
 
     public String getId() {
         return id;
@@ -35,28 +58,52 @@ String id;
     public void setLocation(String location) {
         Location = location;
     }
-
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getWhatItIs() {
-        return whatItIs;
+    public int getPhone() {
+        return phone;
     }
 
-    public void setWhatItIs(String whatItIs) {
-        this.whatItIs = whatItIs;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
-    public Date getTimeToBeDone() {
-        return timeToBeDone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTimeToBeDone(Date timeToBeDone) {
-        this.timeToBeDone = timeToBeDone;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getService() {
+        return service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
+
     }
 }

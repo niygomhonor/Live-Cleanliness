@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#003399</color>
     <color name="colorAccent">#D81B60</color>
     <color name="appColor">#004d99</color>
+
     <color name="backgroundFragment">#008ae6</color>
+
 </resources>
