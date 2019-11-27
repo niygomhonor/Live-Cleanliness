@@ -11,7 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
+import android.widget.LinearLayout;
 
 
 public class DashBoardSections extends AppCompatActivity implements ViewPager.OnClickListener {
@@ -37,7 +37,7 @@ public class DashBoardSections extends AppCompatActivity implements ViewPager.On
         paintings=(CardView) findViewById(R.id.cardView4);
 
 
-frameLayout=findViewById(R.id.fragment_contain);
+//frameLayout=findViewById(R.id.fragment_contain);
 
 
         installation.setOnClickListener(this);
@@ -52,22 +52,22 @@ frameLayout=findViewById(R.id.fragment_contain);
 
         if (v==installation){
 
-            Intent clean=new Intent(DashBoardSections.this, InstallationDetailsOne.class);
+            Intent clean=new Intent(DashBoardSections.this, InstallationDetails.class);
             startActivity(clean);
         }
         if (v==cleaners){
-            Intent clean= new Intent(DashBoardSections.this, CleaningDetailsOne.class);
+            Intent clean= new Intent(DashBoardSections.this,CleanersDetails.class);
 startActivity(clean);
         }
 
         if (v==wellness){
-            Intent clean=new Intent(DashBoardSections.this, WellnessAndCareDetailsOne.class);
+            Intent clean=new Intent(DashBoardSections.this, WellnessAndCareDetails.class);
 
             startActivity(clean);
         }
         if (v==paintings){
 
-            Intent clean=new Intent(DashBoardSections.this,AccountancyDetails.class);
+            Intent clean=new Intent(DashBoardSections.this,TransportDetails.class);
             startActivity(clean);
         }
 

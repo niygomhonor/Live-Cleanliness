@@ -58,7 +58,7 @@ public class CleaningDetailsOne extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cleaning_details);
+        setContentView(R.layout.activity_cleaning_details_one);
         sendDetails=findViewById(R.id.buttonSend);
         nameService=findViewById(R.id.a);
         userPhone=findViewById(R.id.b);

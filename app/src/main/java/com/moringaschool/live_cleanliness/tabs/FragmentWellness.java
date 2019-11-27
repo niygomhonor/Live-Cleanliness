@@ -1,5 +1,6 @@
 package com.moringaschool.live_cleanliness.tabs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.moringaschool.live_cleanliness.InstallationDetails;
+import com.moringaschool.live_cleanliness.InstallationDetailsOne;
 import com.moringaschool.live_cleanliness.R;
 import com.moringaschool.live_cleanliness.WellnessAndCareDetails;
+import com.moringaschool.live_cleanliness.WellnessAndCareDetailsOne;
 import com.moringaschool.live_cleanliness.adapters.HowworksAdapter;
 
 public class FragmentWellness extends Fragment {
@@ -41,6 +44,8 @@ public class FragmentWellness extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), WellnessAndCareDetailsOne.class);
+                startActivity(intent);
 
             }
         });

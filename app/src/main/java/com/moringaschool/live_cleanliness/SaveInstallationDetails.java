@@ -37,7 +37,7 @@ public class SaveInstallationDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_installation_details_one);
+        setContentView(R.layout.activity_installation_details);
         auth = FirebaseAuth.getInstance();
         installation = FirebaseDatabase.getInstance().getReference("Installations");
         location = findViewById(R.id.a);
@@ -62,8 +62,8 @@ public class SaveInstallationDetails extends AppCompatActivity {
   whatItIsInst=whatItIs.getText().toString();
   String id=installation.push().getKey();
 
-        InstallationCustomer installationCustomer=new InstallationCustomer(locationInst,descInst,whatItIsInst,timeTobeDoneInst,id);
-        installation.child(id).setValue(installationCustomer);
+
+
 
 //        InstallationCustomer installationCustomer=new InstallationCustomer(locationInst,descInst,whatItIsInst,timeTobeDoneInst,id);
 //        installation.child(id).setValue(installationCustomer);

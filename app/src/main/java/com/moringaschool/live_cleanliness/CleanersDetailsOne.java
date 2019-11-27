@@ -58,7 +58,7 @@ public class CleanersDetailsOne extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_installation_details_one);
+        setContentView(R.layout.activity_installation_details);
         sendDetails=findViewById(R.id.buttonSend);
         nameService=findViewById(R.id.a);
         userPhone=findViewById(R.id.b);
@@ -100,9 +100,7 @@ public class CleanersDetailsOne extends AppCompatActivity {
 
                 }
 //                OurUsers adapter = new OurUsers(UserUpload.this, ourUsers);
-//
 //                userList.setAdapter(adapter);
-
             }
 
             @Override

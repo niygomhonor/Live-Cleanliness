@@ -1,5 +1,6 @@
 package com.moringaschool.live_cleanliness.tabs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.moringaschool.live_cleanliness.InstallationDetails;
+import com.moringaschool.live_cleanliness.InstallationDetailsOne;
 import com.moringaschool.live_cleanliness.R;
 import com.moringaschool.live_cleanliness.adapters.HowworksAdapter;
 import com.moringaschool.live_cleanliness.adapters.ProductAdapter;
@@ -37,14 +39,16 @@ public class FragmentInstallProduct extends Fragment {
 
          listView =(ListView) v.findViewById(R.id.listProduct);
 
-         ProductAdapter adapter = new   ProductAdapter(getActivity(),sTitle,onDescription,bssImages);
+         ProductAdapter adapter = new  ProductAdapter(getActivity(),sTitle,onDescription,bssImages);
          listView.setAdapter(adapter);
 
          listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
              @Override
              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
+//                 if (view==) {
+                     Intent intent = new Intent(getContext(), InstallationDetailsOne.class);
+                     startActivity(intent);
+//                 }
              }
          });
 

@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:background="@drawable/layout_backgroung"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+
+        android:id="@+id/mainTit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:text="Welcome to Mobil"
+        android:textSize="27dp"/>
+
+    <TextView
+
+        android:id="@+id/subTit"
+        android:layout_below="@+id/mainTit"
+        android:layout_width="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="180dp"
+        android:textSize="20dp"
+android:textColor="#ffff"
+        android:layout_height="wrap_content"
+        android:text="Login as" />
+
+    <Button
+        android:id="@+id/business"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/corner"
+        android:text="Business" />
+
+    <Button
+        android:id="@+id/user"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginBottom="34dp"
+        android:layout_toRightOf="@+id/business"
+        android:background="@drawable/corner"
+        android:text="User" />
 
 
-
-
-</LinearLayout>
+</RelativeLayout>

@@ -73,8 +73,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void loginWithPassword() {
+        FirebaseUser user = mAuth.getCurrentUser();
         String email = mEmailEdit.getText().toString().trim();
         String password = mPasswordEdit.getText().toString().trim();
+        Boolean emailflag=user.isEmailVerified();
         if (email.equals("")) {
             mEmailEdit.setError("Please enter your email");
             return;
@@ -82,6 +84,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (password.equals("")) {
             mPasswordEdit.setError("Password can not be blank ");
             return;
+        }
+//        if (emailflag){
+//            finish();
+//            startActivity(new Intent(LoginActivity.this,HomePage.class));
+//        }
+        else {
+            Toast.makeText(LoginActivity.this, "Verifiy your email",
+                    Toast.LENGTH_SHORT).show();
+            mAuth.signOut();
+
         }
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

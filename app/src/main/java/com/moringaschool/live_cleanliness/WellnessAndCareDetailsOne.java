@@ -74,7 +74,7 @@ public class WellnessAndCareDetailsOne extends AppCompatActivity {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(POSTGRESQL_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         postgresqlAPI=retrofit.create(PostgresqlAPI.class);
-        createPost();
+//        createPost();
         sendDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,10 +113,10 @@ public class WellnessAndCareDetailsOne extends AppCompatActivity {
         });
     }
 
-    private void createPost(){
-        PostgresqlApiUse postgresqlClient=new PostgresqlApiUse("Beauty",1);
+//    private void createPost(){
+//        PostgresqlApiUse postgresqlClient=new PostgresqlApiUse("Beauty",1);
 
-    }
+//    }
 
     private  void  addServiceDetails(){
         name=nameService.getText().toString();
@@ -143,5 +143,12 @@ public class WellnessAndCareDetailsOne extends AppCompatActivity {
             Toast.makeText(this, "Enter your Email please!", Toast.LENGTH_SHORT).show();
         }
 
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }

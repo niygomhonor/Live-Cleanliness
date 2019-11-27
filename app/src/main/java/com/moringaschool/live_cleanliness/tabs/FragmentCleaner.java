@@ -1,5 +1,6 @@
 package com.moringaschool.live_cleanliness.tabs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.moringaschool.live_cleanliness.CleanersDetails;
+import com.moringaschool.live_cleanliness.CleaningDetailsOne;
+import com.moringaschool.live_cleanliness.InstallationDetailsOne;
 import com.moringaschool.live_cleanliness.R;
 import com.moringaschool.live_cleanliness.WellnessAndCareDetails;
 import com.moringaschool.live_cleanliness.adapters.ProductAdapter;
@@ -40,7 +43,8 @@ public class FragmentCleaner extends Fragment {
          listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
              @Override
              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                 Intent intent = new Intent(getContext(), CleaningDetailsOne.class);
+                 startActivity(intent);
 
              }
          });

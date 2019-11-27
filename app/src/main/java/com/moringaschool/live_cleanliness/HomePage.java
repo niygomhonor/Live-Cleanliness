@@ -2,29 +2,30 @@ package com.moringaschool.live_cleanliness;
 
 import androidx.annotation.NonNull;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.annotation.SuppressLint;
+
 import android.app.FragmentManager;
 
-import android.content.ContentResolver;
-import android.content.Context;
+
 import android.content.Intent;
-import android.graphics.Bitmap;
+
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.AttributeSet;
-import android.view.Menu;
-import android.view.MenuInflater;
+
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.MimeTypeMap;
+import android.view.animation.Animation;
+
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -33,23 +34,22 @@ import com.moringaschool.live_cleanliness.fragments.InstallationFragment;
 import com.moringaschool.live_cleanliness.fragments.PaintingFragment;
 import com.moringaschool.live_cleanliness.fragments.TransportFragment;
 import com.moringaschool.live_cleanliness.fragments.WellnessFragment;
-
+import com.squareup.picasso.Picasso;
 
 
 public class
-HomePage extends AppCompatActivity  implements  NavigationView.OnNavigationItemSelectedListener{
-private DrawerLayout drawer;
-private ActionBarDrawerToggle toggle;
+HomePage extends AppCompatActivity  implements  NavigationView.OnNavigationItemSelectedListener {
+    private DrawerLayout drawer;
+    private ActionBarDrawerToggle toggle;
     private ImageView image, leaf;
     private LinearLayout animText, texth, menus;
     private Animation frombottom;
     private Button button;
 
-NavigationView navigationView;
+    NavigationView navigationView;
     public Uri imgUri;
     private static final int REQUEST_IMAGE_CAPTURE = 111;
     ImageView images;
-
 
 
     @Override
@@ -57,25 +57,24 @@ NavigationView navigationView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        drawer=(DrawerLayout) findViewById(R.id.activity_main);
-        toggle=new ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close);
+        drawer = (DrawerLayout) findViewById(R.id.activity_main);
+        toggle = new ActionBarDrawerToggle(this, drawer, R.string.open, R.string.close);
 
-        navigationView=findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
 
-        images=findViewById(R.id.imageView);
+        images = findViewById(R.id.imageView);
 
 
         navigationView.setNavigationItemSelectedListener(this);
 
-drawer.addDrawerListener(toggle);
-toggle.syncState();
-getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        button=(Button)findViewById(R.id.button);
+        button = (Button) findViewById(R.id.button);
 
 
-
-        image = (ImageView) findViewById(R.id.image);
+        image = (ImageView) findViewById(R.id.imageSlide);
         leaf = (ImageView) findViewById(R.id.leaf);
         animText = (LinearLayout) findViewById(R.id.animText);
         texth = (LinearLayout) findViewById(R.id.explore);
@@ -97,44 +96,31 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 startActivity(intent);
             }
         });
+
+
+        //
+//if(savedInstanceState==null){
+//        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InstallationFragment()).commit();
+//        navigationView.setCheckedItem(R.id.nav_Installation);
+//    }
+
+
+        images.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick (View v){
+                FileChooser();
+                Toast.makeText(HomePage.this, "He loves you", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
-
-//if (savedInstanceState==null) {
-//    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InstallationFragment()).commit();
-//    navigationView.setCheckedItem(R.id.nav_Installation);
-//}
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if( toggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
-
-
-if (savedInstanceState==null) {
-    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InstallationFragment()).commit();
-    navigationView.setCheckedItem(R.id.nav_Installation);
-}
-
-
-images.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        FileChooser();
-        Toast.makeText(HomePage.this, "He loves you", Toast.LENGTH_SHORT).show();
-    }
-});
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)){
-
+        if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -220,10 +206,3 @@ images.setOnClickListener(new View.OnClickListener() {
 
     }
 
-
-
-
-
-
-
-//}
