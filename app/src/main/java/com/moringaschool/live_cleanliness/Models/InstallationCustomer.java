@@ -3,13 +3,13 @@ package com.moringaschool.live_cleanliness.Models;
 
 public class InstallationCustomer {
     String name;
-    int phone;
-String email;
+    String phone;
+    String email;
     String location;
     String time;
     String service;
 
-    public InstallationCustomer(String name, int phone, String email, String location, String time, String service) {
+    public InstallationCustomer(String name, String phone, String email, String location, String time, String service) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -40,11 +40,11 @@ String email;
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

@@ -19,6 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = LoginActivity.class.getSimpleName();
@@ -27,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText mPasswordEdit;
     private EditText mEmailEdit;
     private Button mPassword;
-
+private DatabaseReference RootRef;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -40,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mEmailEdit = (EditText) findViewById(R.id.email);
         mPassword = (Button) findViewById(R.id.loginButton);
         mPasswordEdit = (EditText) findViewById(R.id.password);
-
+RootRef= FirebaseDatabase.getInstance().getReference();
         registerEdit.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         mPassword.setOnClickListener(this);
@@ -76,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         FirebaseUser user = mAuth.getCurrentUser();
         String email = mEmailEdit.getText().toString().trim();
         String password = mPasswordEdit.getText().toString().trim();
-        Boolean emailflag=user.isEmailVerified();
+
         if (email.equals("")) {
             mEmailEdit.setError("Please enter your email");
             return;
@@ -85,11 +90,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mPasswordEdit.setError("Password can not be blank ");
             return;
         }
-//        if (emailflag){
-//            finish();
-//            startActivity(new Intent(LoginActivity.this,HomePage.class));
+
 //        }
         else {
+String currentUserID=mAuth.getCurrentUser().getUid();
+RootRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        if (dataSnapshot.child("name").exists()){
+            Toast.makeText(LoginActivity.this, " Welcome", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+    }
+});
             Toast.makeText(LoginActivity.this, "Verifiy your email",
                     Toast.LENGTH_SHORT).show();
             mAuth.signOut();

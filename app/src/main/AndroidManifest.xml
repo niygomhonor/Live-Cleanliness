@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="com.moringaschool.live_cleanliness">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -34,15 +36,22 @@
         <activity android:name=".CleaningDetailsOne" />
         <activity android:name=".AccountancyDetails" />
         <activity android:name=".SaveInstallationDetails" />
-        <activity android:name=".WellnessAndCareDetailsOne" />
+        <activity android:name=".WellnessAndCareDetailsOne" >
+
+
+
+        </activity>
         <activity android:name=".CleanersDetailsOne" />
-        <activity android:name=".InstallationDetailsOne"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".InstallationDetailsOne">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
         <activity
             android:name=".PaintingsDetails"

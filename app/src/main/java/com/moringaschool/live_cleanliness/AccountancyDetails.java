@@ -37,7 +37,7 @@ import static com.moringaschool.live_cleanliness.Constants.POSTGRESQL_BASE_URL;
 public class AccountancyDetails extends AppCompatActivity {
     private PostgresqlAPI postgresqlAPI;
     String name;
-    int phone;
+    String phone;
     String email;
     String location;
     String time;
@@ -67,7 +67,7 @@ public class AccountancyDetails extends AppCompatActivity {
         timeService=findViewById(R.id.e);
         userService=findViewById(R.id.f);
         mAuth = FirebaseAuth.getInstance();
-        mDatabaseRef= FirebaseDatabase.getInstance().getReference("Accountancy");
+        mDatabaseRef= FirebaseDatabase.getInstance().getReference("Accountancy").child("AccountancyRequest");
 //        Intent clean=getIntent();
 //        String a=clean.getStringExtra("Installation");
 
@@ -122,7 +122,7 @@ public class AccountancyDetails extends AppCompatActivity {
 
     private  void  addServiceDetails(){
         name=nameService.getText().toString();
-        phone= userPhone.getHeight();
+        phone= userPhone.getText().toString();
         email=userEmail.getText().toString();
         location=userLocation.getText().toString();
         service=userService.getText().toString();

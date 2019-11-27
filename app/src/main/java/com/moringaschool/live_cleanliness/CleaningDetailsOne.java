@@ -37,7 +37,7 @@ public class CleaningDetailsOne extends AppCompatActivity {
 
     private PostgresqlAPI postgresqlAPI;
     String name;
-    int phone;
+    String phone;
     String email;
     String location;
     String time;
@@ -67,7 +67,7 @@ public class CleaningDetailsOne extends AppCompatActivity {
         timeService=findViewById(R.id.e);
         userService=findViewById(R.id.f);
         mAuth = FirebaseAuth.getInstance();
-        mDatabaseRef= FirebaseDatabase.getInstance().getReference("Cleaning");
+        mDatabaseRef= FirebaseDatabase.getInstance().getReference("Cleaning").child("CleaningRequest");
 //        Intent clean=getIntent();
 //        String a=clean.getStringExtra("Installation");
 
@@ -120,7 +120,7 @@ public class CleaningDetailsOne extends AppCompatActivity {
 
     private  void  addServiceDetails(){
         name=nameService.getText().toString();
-        phone= userPhone.getHeight();
+        phone= userPhone.getText().toString();
         email=userEmail.getText().toString();
         location=userLocation.getText().toString();
         service=userService.getText().toString();

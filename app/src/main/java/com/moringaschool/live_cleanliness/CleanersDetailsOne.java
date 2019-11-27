@@ -37,7 +37,7 @@ public class CleanersDetailsOne extends AppCompatActivity {
 
     private PostgresqlAPI postgresqlAPI;
     String name;
-    int phone;
+    String phone;
     String email;
     String location;
     String time;
@@ -118,7 +118,7 @@ public class CleanersDetailsOne extends AppCompatActivity {
 
     private  void  addServiceDetails(){
         name=nameService.getText().toString();
-        phone= userPhone.getHeight();
+        phone= userPhone.getText().toString();
         email=userEmail.getText().toString();
         location=userLocation.getText().toString();
         service=userService.getText().toString();

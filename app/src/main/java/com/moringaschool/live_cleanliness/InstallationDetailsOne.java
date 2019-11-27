@@ -36,7 +36,7 @@ import static com.moringaschool.live_cleanliness.Constants.POSTGRESQL_BASE_URL;
 
 public class InstallationDetailsOne extends AppCompatActivity {
     String name;
-    int phone;
+    String phone;
     String email;
     String location;
     String time;
@@ -55,6 +55,7 @@ public class InstallationDetailsOne extends AppCompatActivity {
     private EditText userLocation;
     private TextView timeService;
     private EditText userService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +68,7 @@ public class InstallationDetailsOne extends AppCompatActivity {
         timeService = findViewById(R.id.e);
         userService = findViewById(R.id.f);
         mAuth = FirebaseAuth.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Installation");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Installation").child("InstallationRequest");
 
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl(POSTGRESQL_BASE_URL)
@@ -114,7 +115,7 @@ public class InstallationDetailsOne extends AppCompatActivity {
 
     private void addServiceDetails() {
         name = nameService.getText().toString();
-        phone = userPhone.getHeight();
+        phone = userPhone.getText().toString();
         email = userEmail.getText().toString();
         location = userLocation.getText().toString();
         service = userService.getText().toString();

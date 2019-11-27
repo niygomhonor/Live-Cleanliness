@@ -21,6 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = SignUpActivity.class.getSimpleName();
@@ -37,6 +38,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthenticationProgressDialog;
     private String mName;
+    DatabaseReference RootRef;
 
 
     @Override
@@ -105,6 +107,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         if (task.isSuccessful()) {
 //                            sendUserData();
 //                            mAuth.signOut();
+                            String currentUserID=mAuth.getCurrentUser().getUid();
+                            RootRef.child("Users").child(currentUserID).setValue("");
                             Log.d(TAG, "Authentication successful");
                             createFirebaseUserProfile(task.getResult().getUser());
                         }
@@ -193,6 +197,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
+
+
+
                             Log.d(TAG, user.getDisplayName());
                         }
                     }
