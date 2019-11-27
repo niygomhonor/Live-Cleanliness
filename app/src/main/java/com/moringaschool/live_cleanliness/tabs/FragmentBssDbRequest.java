@@ -57,7 +57,7 @@ mAuth=FirebaseAuth.getInstance();
 currentUserId=mAuth.getCurrentUser().getUid();
 
 
-userRequestRef=FirebaseDatabase.getInstance().getReference("Installation");
+userRequestRef=FirebaseDatabase.getInstance().getReference().child("Installation").child(currentUserId);
 
 
    return  businessRequestView;
